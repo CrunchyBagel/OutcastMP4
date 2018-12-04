@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		66430F5821B6A63700F41795 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66430F5721B6A63700F41795 /* main.swift */; };
+		66430F5F21B6A63F00F41795 /* MP4File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66430F5E21B6A63F00F41795 /* MP4File.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		66430F5421B6A63700F41795 /* OutcastMP4 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OutcastMP4; sourceTree = BUILT_PRODUCTS_DIR; };
 		66430F5721B6A63700F41795 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		66430F5E21B6A63F00F41795 /* MP4File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MP4File.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				66430F5721B6A63700F41795 /* main.swift */,
+				66430F5E21B6A63F00F41795 /* MP4File.swift */,
 			);
 			path = OutcastMP4;
 			sourceTree = "<group>";
@@ -120,6 +123,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66430F5821B6A63700F41795 /* main.swift in Sources */,
+				66430F5F21B6A63F00F41795 /* MP4File.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
