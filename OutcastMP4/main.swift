@@ -9,7 +9,9 @@
 import Foundation
 
 do {
-    let path = URL(fileURLWithPath: "/path/to/file.m4a")
+    guard let path = URL(fileURLWithPath: "/path/to/file.m4a") else {
+        exit(1)
+    }
     
     let mp4File = try MP4File(localUrl: path)
     

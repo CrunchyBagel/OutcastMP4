@@ -41,12 +41,12 @@ extension MP4File {
     func readChapters() throws -> [Chapter] {
         let fileHandle = try FileHandle(forReadingFrom: self.localUrl)
         
-        try self.assertCorrectFileType(fileHandle: fileHandle)
-        
         defer {
             fileHandle.closeFile()
         }
-        
+
+        try self.assertCorrectFileType(fileHandle: fileHandle)
+
         fileHandle.seek(toFileOffset: 0)
         let moovAtoms = Atom.atoms(fileHandle: fileHandle, endOffset: nil).filter { $0.type == "moov" }
         
