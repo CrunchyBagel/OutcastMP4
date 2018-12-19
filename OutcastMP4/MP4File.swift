@@ -309,25 +309,41 @@ extension MP4File {
 extension Data {
     var uint32Value: UInt32 {
         var length: UInt32 = 0
-        (self as NSData).getBytes(&length, length: 4)
+        
+        let numBytes = MemoryLayout<UInt32>.size
+        
+        guard self.count >= numBytes else {
+            return 0
+        }
+        
+        (self as NSData).getBytes(&length, length: numBytes)
         
         return length.bigEndian
     }
     
     var uint16Value: UInt16 {
         var length: UInt16 = 0
-        (self as NSData).getBytes(&length, length: 2)
+        
+        let numBytes = MemoryLayout<UInt16>.size
+        
+        guard self.count >= numBytes else {
+            return 0
+        }
+        
+        (self as NSData).getBytes(&length, length: numBytes)
         
         return length.bigEndian
     }
 }
 extension FileHandle {
     func readUint32() -> UInt32 {
-        return self.readData(ofLength: 4).uint32Value
+        let numBytes = MemoryLayout<UInt32>.size
+        return self.readData(ofLength: numBytes).uint32Value
     }
     
     func readUint16() -> UInt16 {
-        return self.readData(ofLength: 2).uint16Value
+        let numBytes = MemoryLayout<UInt16>.size
+        return self.readData(ofLength: numBytes).uint16Value
     }
     
     func seekToContent(atom: MP4File.Atom) {
